@@ -1,0 +1,20 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+interface ThemeCtx { isDark: boolean; toggle: () => void }
+const Ctx = createContext<ThemeCtx>({ isDark: true, toggle: () => {} });
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('light', !isDark);
+  }, [isDark]);
+
+  return (
+    <Ctx.Provider value={{ isDark, toggle: () => setIsDark(d => !d) }}>
+      {children}
+    </Ctx.Provider>
+  );
+}
+
+export const useTheme = () => useContext(Ctx);

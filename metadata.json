@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Poverty Mapping Intelligence Dashboard",
+  "description": "Geospatial X RAG Ensemble Intelligence Dashboard for analyzing poverty risk, multimodal data components, and XAI insights across Surabaya, Gresik, and Bangkalan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

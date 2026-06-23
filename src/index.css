@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: #27272a;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0b] text-[#e4e4e7] antialiased overflow-hidden selection:bg-red-500/30 font-sans;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
+
+/* ── Light mode ── */
+html.light {
+  color-scheme: light;
+}
+html.light body {
+  background-color: #e8edf4 !important;
+  color: #111827 !important;
+}
+
+/* Surfaces */
+html.light .bg-\[\#0a0a0b\]    { background-color: #e8edf4 !important; }
+html.light .bg-\[\#111114\]    { background-color: #ffffff !important; }
+html.light .bg-\[\#1a1a1e\]    { background-color: #f3f4f6 !important; }
+
+/* Text — floor all muted whites at 55% so they remain readable on white */
+html.light .text-\[\#e4e4e7\]  { color: #111827 !important; }
+html.light .text-white          { color: #111827 !important; }
+html.light .text-white\/90      { color: #111827 !important; }
+html.light .text-white\/80      { color: #1f2937 !important; }
+html.light .text-white\/70      { color: #374151 !important; }
+html.light .text-white\/60      { color: #4b5563 !important; }
+html.light .text-white\/50      { color: #6b7280 !important; }
+html.light .text-white\/40      { color: #6b7280 !important; }
+html.light .text-white\/35      { color: #9ca3af !important; }
+html.light .text-white\/30      { color: #9ca3af !important; }
+html.light .text-white\/25      { color: #9ca3af !important; }
+html.light .text-white\/20      { color: #d1d5db !important; }
+
+/* Borders */
+html.light .border-white\/5     { border-color: #e5e7eb !important; }
+html.light .border-white\/10    { border-color: #d1d5db !important; }
+html.light .border-white\/15    { border-color: #c4c9d4 !important; }
+html.light .border-white\/20    { border-color: #b4bac6 !important; }
+
+/* Backgrounds */
+html.light .bg-white\/5         { background-color: #f3f4f6 !important; }
+html.light .bg-white\/10        { background-color: #e9ebee !important; }
+html.light .bg-black\/40        { background-color: rgba(255,255,255,0.96) !important; }
+html.light .bg-black\/30        { background-color: rgba(255,255,255,0.90) !important; }
+html.light .hover\:bg-white\/5:hover   { background-color: #f3f4f6 !important; }
+html.light .hover\:bg-white\/10:hover  { background-color: #e9ebee !important; }
+
+/* Red accent — keep readable but darker */
+html.light .text-red-200        { color: #b91c1c !important; }
+html.light .text-red-300        { color: #b91c1c !important; }
+html.light .text-red-400        { color: #dc2626 !important; }
+html.light .text-red-400\/80    { color: rgba(185,28,28,0.85) !important; }
+html.light .text-red-500        { color: #b91c1c !important; }
+html.light .bg-red-500\/20      { background-color: rgba(185,28,28,0.12) !important; }
+html.light .bg-red-500\/10      { background-color: rgba(185,28,28,0.07) !important; }
+html.light .bg-red-500\/5       { background-color: rgba(185,28,28,0.04) !important; }
+html.light .border-red-500\/30  { border-color: rgba(185,28,28,0.35) !important; }
+html.light .border-red-500\/40  { border-color: rgba(185,28,28,0.40) !important; }
+html.light .border-red-500\/20  { border-color: rgba(185,28,28,0.25) !important; }
+html.light .bg-red-500\/10 .text-red-400 { color: #991b1b !important; }
+
+/* Shadows */
+html.light .shadow-2xl          { box-shadow: 0 12px 32px -4px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.06) !important; }
+html.light .shadow-lg           { box-shadow: 0 4px 16px -2px rgba(0,0,0,0.10) !important; }
+
+/* Tooltip */
+html.light .bg-\[\#111114\]\/95 { background-color: rgba(255,255,255,0.98) !important; }
+
+/* Select */
+html.light select               { background-color: #f9fafb !important; color: #111827 !important; border-color: #d1d5db !important; }
+
+/* Scrollbar */
+html.light .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1 !important; }
+
+/* Map nav controls */
+html.light .maplibregl-ctrl button { background-color: #ffffff !important; }
+
+/* Opacity-variant backgrounds that Tailwind emits as separate classes */
+html.light .bg-\[\#111114\]\/80  { background-color: rgba(255,255,255,0.92) !important; }
+html.light .bg-\[\#111114\]\/95  { background-color: rgba(255,255,255,0.97) !important; }
+html.light .bg-\[\#0a0a0b\]\/95  { background-color: rgba(255,255,255,0.97) !important; }
+html.light .backdrop-blur-md      { backdrop-filter: blur(12px); }
+
+/* Slider track */
+html.light .bg-white\/10          { background-color: #e2e8f0 !important; }
+
+/* TopBar nav tab pill */
+html.light .bg-white\/10.text-white { background-color: #e2e8f0 !important; }
+
+/* Any remaining near-black surfaces */
+html.light [class*="bg-black"]    { background-color: rgba(255,255,255,0.88) !important; }
+html.light [class*="bg-\[#0d0d"] { background-color: #f1f5f9 !important; }
+html.light [class*="bg-\[#1a1a"] { background-color: #f3f4f6 !important; }
