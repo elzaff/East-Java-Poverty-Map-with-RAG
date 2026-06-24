@@ -112,16 +112,40 @@ export function DataNotes({ onClose }: DataNotesProps) {
 
           <Section icon={FileText} title="Fitur Teks & Berita (NLP)">
             <p>
-              Berita lokal dan dokumen perencanaan (RPJMD, BPS) diproses dengan IndoBERT untuk menghasilkan <em>event score</em> per wilayah per tahun:
+              Berita lokal dan dokumen perencanaan (RPJMD, BPS) diproses dengan <em>Large Language Model</em> (LLM) dan IndoBERT untuk menghasilkan sinyal *event* per wilayah per tahun yang digunakan oleh model Deep Learning.
             </p>
-            <ul className="list-disc pl-4 space-y-1.5">
-              <li><Tag>event_score_ketenagakerjaan</Tag> — frekuensi & sentimen berita PHK, lowongan, upah</li>
-              <li><Tag>event_score_infrastruktur</Tag> — berita pembangunan jalan, air bersih, listrik</li>
-              <li><Tag>event_score_ekonomi</Tag> — berita UMKM, harga pangan, bansos</li>
-              <li><Tag>distress_share</Tag> — proporsi berita dengan sentimen negatif terkait kemiskinan</li>
-            </ul>
-            <p className="text-white/40 text-[11px]">
-              RAG corpus: RPJMD + BPS + berita lokal + narasi SHAP XAI (71.053 chunks, embedding text-embedding-3-small, retrieval hybrid BM25+FAISS 60:40). Generator: Qwen2.5-7B-Instruct (RAGAS faithfulness 0.893, relevancy 0.780).
+            <div className="space-y-4 mt-3">
+              <div>
+                <h4 className="text-white font-bold text-[11px] mb-2">12 Topik Pemberitaan (Event Scores)</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 pl-2 border-l-2 border-white/10">
+                  <div className="text-[11px]"><Tag>Ketenagakerjaan</Tag> <span className="text-white/60">Pengangguran, PHK, upah</span></div>
+                  <div className="text-[11px]"><Tag>Harga_Pangan_Inflasi</Tag> <span className="text-white/60">Sembako naik, inflasi</span></div>
+                  <div className="text-[11px]"><Tag>Bencana_Kerentanan</Tag> <span className="text-white/60">Banjir, kekeringan</span></div>
+                  <div className="text-[11px]"><Tag>Kesehatan</Tag> <span className="text-white/60">Akses RS, gizi buruk, stunting</span></div>
+                  <div className="text-[11px]"><Tag>Pendidikan</Tag> <span className="text-white/60">Putus sekolah, biaya</span></div>
+                  <div className="text-[11px]"><Tag>Perumahan_Sanitasi</Tag> <span className="text-white/60">Rumah kumuh, sanitasi</span></div>
+                  <div className="text-[11px]"><Tag>Infrastruktur_Akses</Tag> <span className="text-white/60">Jalan rusak, air bersih, listrik</span></div>
+                  <div className="text-[11px]"><Tag>Perlindungan_Sosial</Tag> <span className="text-white/60">Bansos, PKH, BLT</span></div>
+                  <div className="text-[11px]"><Tag>Ekonomi_Lokal_UMKM</Tag> <span className="text-white/60">Pasar tradisional, UMKM</span></div>
+                  <div className="text-[11px]"><Tag>Investasi_Industri</Tag> <span className="text-white/60">Pabrik baru, modal masuk</span></div>
+                  <div className="text-[11px]"><Tag>Kebijakan_Anggaran</Tag> <span className="text-white/60">APBD, program pemda</span></div>
+                  <div className="text-[11px]"><Tag>Konflik_Sosial</Tag> <span className="text-white/60">Kriminalitas, vandalisme</span></div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-white font-bold text-[11px] mb-1">Indikator Komposit (Atribut Berita)</h4>
+                <p className="text-[11px] text-white/70 mb-1.5">Selain klasifikasi topik, setiap artikel berita diekstraksi nilai kualitatifnya yang kemudian diagregasi menjadi fitur komposit:</p>
+                <ul className="list-disc pl-4 space-y-1.5 text-[11px] text-white/70">
+                  <li><Tag>Sentiment</Tag> Sentimen artikel (Negative, Neutral, Positive, Mixed).</li>
+                  <li><Tag>Severity</Tag> Tingkat keparahan kejadian (Low, Medium, High).</li>
+                  <li><Tag>Poverty Relevance</Tag> Kaitan dengan kemiskinan (Direct, Indirect, None).</li>
+                  <li><Tag>distress_share</Tag> <strong className="text-white">Proporsi Berita Negatif</strong> — Dihitung dari rasio jumlah berita dengan <em>Sentiment = Negative</em> yang digabungkan dengan bobot keparahan kejadian di suatu daerah. Semakin tinggi nilainya, semakin banyak kejadian merugikan di wilayah tersebut pada tahun tersebut.</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-white/40 text-[11px] mt-2">
+              RAG corpus: RPJMD + BPS + berita lokal + narasi SHAP XAI (71.053 chunks). Generator: Qwen2.5-7B-Instruct (RAGAS faithfulness 0.893).
             </p>
           </Section>
 
