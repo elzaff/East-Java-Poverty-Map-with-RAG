@@ -14,7 +14,7 @@ interface ModelExplorerProps {
 const MODEL_GROUPS = ['GRU', 'MLP', 'TCN', 'TRANSFORMER'];
 
 export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorerProps) {
-  const [activeTab, setActiveTab] = useState<'aggregate' | 'mumtaz'>('aggregate');
+  const [activeTab, setActiveTab] = useState<'aggregate' | 'direct_district'>('aggregate');
   const [runs, setRuns] = useState<ScenarioRun[]>([]);
   const [selectedGroup, setSelectedGroup] = useState<string>('ALL');
 
@@ -77,10 +77,10 @@ export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorer
                 Aggregate Weak Supervision
               </button>
               <button
-                onClick={() => setActiveTab('mumtaz')}
+                onClick={() => setActiveTab('direct_district')}
                 className={twMerge(
                   'px-4 py-2 text-[11px] font-bold uppercase tracking-widest transition-colors border-b-2',
-                  activeTab === 'mumtaz' ? 'border-[#fbbf24] text-[#fbbf24]' : 'border-transparent text-white/40 hover:text-white/70',
+                  activeTab === 'direct_district' ? 'border-[#fbbf24] text-[#fbbf24]' : 'border-transparent text-white/40 hover:text-white/70',
                 )}
               >
                 Direct District
@@ -103,7 +103,7 @@ export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorer
                   : 'Mode benchmark melatih prediksi langsung tingkat kabupaten. Pada tampilan kecamatan, angka kabupaten diproyeksikan ke kecamatan dalam kabupaten yang sama.'}
               </p>
               <p className="text-xs text-white/45">
-                Run aktif: {activeRun ? `${activeRun.method} | ${activeRun.model} | ${activeRun.scenario} | ${activeRun.aggregation_weight}` : '-'}
+                Run aktif: {activeRun ? `${activeRun.method === 'direct_district' ? 'Direct District' : 'Aggregate'} | ${activeRun.model} | ${activeRun.scenario} | ${activeRun.aggregation_weight}` : '-'}
               </p>
             </div>
 

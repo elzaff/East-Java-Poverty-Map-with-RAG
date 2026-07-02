@@ -35,13 +35,13 @@ export function RightSidebar({ selectedKec, year, activeLayer = 'estimasi_kemisk
   const currentData = data.find(d => d.year === year);
   const isKabupaten = selectedKec.gid_3.endsWith('-KAB');
   const isSpatialIndicator = ['ndvi', 'ndbi', 'ndwi', 'ntl', 'vanui'].includes(activeLayer);
-  const runKind = activeRun?.method === 'mumtaz' ? 'Direct District' : 'Aggregate';
+  const runKind = activeRun?.method === 'direct_district' ? 'Direct District' : 'Aggregate';
 
   const trendData = data.map(d => ({
     year: d.year,
     prediction_dl_percent: d.prediction_dl_percent ?? (d.poverty_risk_score * 100),
     prediction_dl_aggregate: d.prediction_dl_aggregate,
-    prediction_dl_mumtaz: d.prediction_dl_mumtaz,
+    prediction_dl_direct_district: d.prediction_dl_direct_district,
     bps_poverty_percent: d.bps_poverty_percent,
     poverty_delta: d.poverty_delta,
     prediction_error: d.prediction_error,
@@ -75,7 +75,7 @@ export function RightSidebar({ selectedKec, year, activeLayer = 'estimasi_kemisk
       case 'ndwi': return '#3b82f6';
       case 'ntl': return '#eab308';
       case 'vanui': return '#a855f7';
-      default: return activeRun?.method === 'mumtaz' ? '#ec4899' : '#ef4444';
+      default: return activeRun?.method === 'direct_district' ? '#ec4899' : '#ef4444';
     }
   };
 
@@ -122,11 +122,11 @@ export function RightSidebar({ selectedKec, year, activeLayer = 'estimasi_kemisk
               </div>
             </div>
           )}
-          {!isSpatialIndicator && currentData?.prediction_dl_mumtaz !== undefined && (
+          {!isSpatialIndicator && currentData?.prediction_dl_direct_district !== undefined && (
             <div className="flex flex-col flex-1 min-w-[45%] mt-2">
               <div className="text-[9px] text-[#ec4899]/80 uppercase">DIRECT DISTRICT</div>
               <div className="text-sm font-mono text-[#ec4899] font-bold mt-0.5">
-                {currentData.prediction_dl_mumtaz.toFixed(2)}%
+                {currentData.prediction_dl_direct_district.toFixed(2)}%
               </div>
             </div>
           )}

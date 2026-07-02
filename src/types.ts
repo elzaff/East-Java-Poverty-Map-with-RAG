@@ -1,6 +1,6 @@
 export type City = 'Surabaya' | 'Gresik' | 'Bangkalan';
 
-export type ScenarioMethod = 'aggregate' | 'mumtaz';
+export type ScenarioMethod = 'aggregate' | 'direct_district';
 
 export interface Kecamatan {
   gid_3: string;
@@ -33,7 +33,7 @@ export interface TimeseriesDataPoint {
   prediction_dl: number;
   prediction_dl_percent?: number;
   prediction_dl_aggregate?: number;
-  prediction_dl_mumtaz?: number;
+  prediction_dl_direct_district?: number;
   bps_poverty_percent?: number | null;
   ndvi: number;
   ndbi: number;

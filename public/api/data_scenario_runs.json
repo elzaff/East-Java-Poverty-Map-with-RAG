@@ -2786,8 +2786,8 @@
       "label": "TRANSFORMER N4_FULL"
     },
     {
-      "id": "mumtaz__MLP__J1_PCD__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__J1_PCD__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "J1_PCD",
       "scenario_label": "PCD",
@@ -2850,8 +2850,8 @@
       "label": "MLP J1_PCD"
     },
     {
-      "id": "mumtaz__MLP__J2_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__J2_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "J2_IMAGE",
       "scenario_label": "Image",
@@ -2914,8 +2914,8 @@
       "label": "MLP J2_IMAGE"
     },
     {
-      "id": "mumtaz__MLP__J3_PCD_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__J3_PCD_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "J3_PCD_IMAGE",
       "scenario_label": "PCD + Image",
@@ -2978,8 +2978,8 @@
       "label": "MLP J3_PCD_IMAGE"
     },
     {
-      "id": "mumtaz__MLP__J4_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__J4_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "J4_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -3042,8 +3042,8 @@
       "label": "MLP J4_PCD_NLP"
     },
     {
-      "id": "mumtaz__MLP__J5_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__J5_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "J5_FULL",
       "scenario_label": "Full",
@@ -3106,8 +3106,8 @@
       "label": "MLP J5_FULL"
     },
     {
-      "id": "mumtaz__MLP__N1_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__N1_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "N1_NLP",
       "scenario_label": "NLP",
@@ -3135,8 +3135,8 @@
       "label": "MLP N1_NLP"
     },
     {
-      "id": "mumtaz__MLP__N2_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__N2_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "N2_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -3164,8 +3164,8 @@
       "label": "MLP N2_PCD_NLP"
     },
     {
-      "id": "mumtaz__MLP__N3_IMAGE_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__N3_IMAGE_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "N3_IMAGE_NLP",
       "scenario_label": "Image + NLP",
@@ -3193,8 +3193,8 @@
       "label": "MLP N3_IMAGE_NLP"
     },
     {
-      "id": "mumtaz__MLP__N4_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__MLP__N4_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "MLP",
       "scenario": "N4_FULL",
       "scenario_label": "Full NLP",
@@ -3222,8 +3222,8 @@
       "label": "MLP N4_FULL"
     },
     {
-      "id": "mumtaz__GRU__J1_PCD__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__J1_PCD__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "J1_PCD",
       "scenario_label": "PCD",
@@ -3286,8 +3286,8 @@
       "label": "GRU J1_PCD"
     },
     {
-      "id": "mumtaz__GRU__J2_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__J2_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "J2_IMAGE",
       "scenario_label": "Image",
@@ -3350,8 +3350,8 @@
       "label": "GRU J2_IMAGE"
     },
     {
-      "id": "mumtaz__GRU__J3_PCD_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__J3_PCD_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "J3_PCD_IMAGE",
       "scenario_label": "PCD + Image",
@@ -3414,8 +3414,8 @@
       "label": "GRU J3_PCD_IMAGE"
     },
     {
-      "id": "mumtaz__GRU__J4_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__J4_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "J4_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -3478,8 +3478,8 @@
       "label": "GRU J4_PCD_NLP"
     },
     {
-      "id": "mumtaz__GRU__J5_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__J5_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "J5_FULL",
       "scenario_label": "Full",
@@ -3542,8 +3542,8 @@
       "label": "GRU J5_FULL"
     },
     {
-      "id": "mumtaz__GRU__N1_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__N1_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "N1_NLP",
       "scenario_label": "NLP",
@@ -3571,8 +3571,8 @@
       "label": "GRU N1_NLP"
     },
     {
-      "id": "mumtaz__GRU__N2_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__N2_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "N2_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -3600,8 +3600,8 @@
       "label": "GRU N2_PCD_NLP"
     },
     {
-      "id": "mumtaz__GRU__N3_IMAGE_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__N3_IMAGE_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "N3_IMAGE_NLP",
       "scenario_label": "Image + NLP",
@@ -3629,8 +3629,8 @@
       "label": "GRU N3_IMAGE_NLP"
     },
     {
-      "id": "mumtaz__GRU__N4_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__GRU__N4_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "GRU",
       "scenario": "N4_FULL",
       "scenario_label": "Full NLP",
@@ -3658,8 +3658,8 @@
       "label": "GRU N4_FULL"
     },
     {
-      "id": "mumtaz__TCN__J1_PCD__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__J1_PCD__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "J1_PCD",
       "scenario_label": "PCD",
@@ -3722,8 +3722,8 @@
       "label": "TCN J1_PCD"
     },
     {
-      "id": "mumtaz__TCN__J2_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__J2_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "J2_IMAGE",
       "scenario_label": "Image",
@@ -3786,8 +3786,8 @@
       "label": "TCN J2_IMAGE"
     },
     {
-      "id": "mumtaz__TCN__J3_PCD_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__J3_PCD_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "J3_PCD_IMAGE",
       "scenario_label": "PCD + Image",
@@ -3850,8 +3850,8 @@
       "label": "TCN J3_PCD_IMAGE"
     },
     {
-      "id": "mumtaz__TCN__J4_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__J4_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "J4_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -3914,8 +3914,8 @@
       "label": "TCN J4_PCD_NLP"
     },
     {
-      "id": "mumtaz__TCN__J5_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__J5_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "J5_FULL",
       "scenario_label": "Full",
@@ -3978,8 +3978,8 @@
       "label": "TCN J5_FULL"
     },
     {
-      "id": "mumtaz__TCN__N1_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__N1_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "N1_NLP",
       "scenario_label": "NLP",
@@ -4007,8 +4007,8 @@
       "label": "TCN N1_NLP"
     },
     {
-      "id": "mumtaz__TCN__N2_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__N2_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "N2_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -4036,8 +4036,8 @@
       "label": "TCN N2_PCD_NLP"
     },
     {
-      "id": "mumtaz__TCN__N3_IMAGE_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__N3_IMAGE_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "N3_IMAGE_NLP",
       "scenario_label": "Image + NLP",
@@ -4065,8 +4065,8 @@
       "label": "TCN N3_IMAGE_NLP"
     },
     {
-      "id": "mumtaz__TCN__N4_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TCN__N4_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "TCN",
       "scenario": "N4_FULL",
       "scenario_label": "Full NLP",
@@ -4094,8 +4094,8 @@
       "label": "TCN N4_FULL"
     },
     {
-      "id": "mumtaz__TRANSFORMER__J1_PCD__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__J1_PCD__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "J1_PCD",
       "scenario_label": "PCD",
@@ -4158,8 +4158,8 @@
       "label": "TRANSFORMER J1_PCD"
     },
     {
-      "id": "mumtaz__TRANSFORMER__J2_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__J2_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "J2_IMAGE",
       "scenario_label": "Image",
@@ -4222,8 +4222,8 @@
       "label": "TRANSFORMER J2_IMAGE"
     },
     {
-      "id": "mumtaz__TRANSFORMER__J3_PCD_IMAGE__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__J3_PCD_IMAGE__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "J3_PCD_IMAGE",
       "scenario_label": "PCD + Image",
@@ -4286,8 +4286,8 @@
       "label": "TRANSFORMER J3_PCD_IMAGE"
     },
     {
-      "id": "mumtaz__TRANSFORMER__J4_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__J4_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "J4_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -4350,8 +4350,8 @@
       "label": "TRANSFORMER J4_PCD_NLP"
     },
     {
-      "id": "mumtaz__TRANSFORMER__J5_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__J5_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "J5_FULL",
       "scenario_label": "Full",
@@ -4414,8 +4414,8 @@
       "label": "TRANSFORMER J5_FULL"
     },
     {
-      "id": "mumtaz__TRANSFORMER__N1_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__N1_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "N1_NLP",
       "scenario_label": "NLP",
@@ -4443,8 +4443,8 @@
       "label": "TRANSFORMER N1_NLP"
     },
     {
-      "id": "mumtaz__TRANSFORMER__N2_PCD_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__N2_PCD_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "N2_PCD_NLP",
       "scenario_label": "PCD + NLP",
@@ -4472,8 +4472,8 @@
       "label": "TRANSFORMER N2_PCD_NLP"
     },
     {
-      "id": "mumtaz__TRANSFORMER__N3_IMAGE_NLP__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__N3_IMAGE_NLP__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "N3_IMAGE_NLP",
       "scenario_label": "Image + NLP",
@@ -4501,8 +4501,8 @@
       "label": "TRANSFORMER N3_IMAGE_NLP"
     },
     {
-      "id": "mumtaz__TRANSFORMER__N4_FULL__feature_aggregation",
-      "method": "mumtaz",
+      "id": "direct_district__TRANSFORMER__N4_FULL__feature_aggregation",
+      "method": "direct_district",
       "model": "TRANSFORMER",
       "scenario": "N4_FULL",
       "scenario_label": "Full NLP",

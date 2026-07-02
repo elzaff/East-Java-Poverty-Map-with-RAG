@@ -25,7 +25,7 @@ async function loadJSON(path: string) {
 let _scenarioIndex: ScenarioIndex | null = null;
 const _runCache: Record<string, RunData> = {};
 let _modelMetrics: ModelMetric[] | null = null;
-let _mumtazMetrics: ModelMetric[] | null = null;
+let _directDistrictMetrics: ModelMetric[] | null = null;
 let _nlpScores: Record<string, any> | null = null;
 let _spatialInds: Record<string, any> | null = null;
 
@@ -59,12 +59,12 @@ export async function fetchScenarioRuns(): Promise<ScenarioRun[]> {
   return index.runs;
 }
 
-export const fetchMumtazMetrics = async (): Promise<ModelMetric[]> => {
-  if (_mumtazMetrics) return _mumtazMetrics;
+export const fetchDirectDistrictMetrics = async (): Promise<ModelMetric[]> => {
+  if (_directDistrictMetrics) return _directDistrictMetrics;
   try {
     const runs = await fetchScenarioRuns();
-    _mumtazMetrics = runs
-      .filter(run => run.method === 'mumtaz' && run.metrics)
+    _directDistrictMetrics = runs
+      .filter(run => run.method === 'direct_district' && run.metrics)
       .map(run => ({
         model: run.model,
         scenario: run.scenario,
@@ -76,7 +76,7 @@ export const fetchMumtazMetrics = async (): Promise<ModelMetric[]> => {
         mape: run.metrics?.mape ?? 0,
         is_production: run.is_production,
       }));
-    return _mumtazMetrics;
+    return _directDistrictMetrics;
   } catch {
     return [];
   }
@@ -220,7 +220,7 @@ function buildPoint(
   idx: number,
   arr: any[],
   predField: 'prediction_dl_percent' | 'prediction',
-  method: 'aggregate' | 'mumtaz',
+  method: 'aggregate' | 'direct_district',
   sp: any,
   n: any,
   kabS?: any,
@@ -239,7 +239,7 @@ function buildPoint(
     prediction_dl: prediction / 100,
     prediction_dl_percent: prediction,
     prediction_dl_aggregate: method === 'aggregate' ? kabS?.prediction : undefined,
-    prediction_dl_mumtaz: method === 'mumtaz' ? prediction : undefined,
+    prediction_dl_direct_district: method === 'direct_district' ? prediction : undefined,
     bps_poverty_percent: (kabS?.bps ?? s.bps) === 0 ? null : (kabS?.bps ?? s.bps),
     prediction_error: uncertainty / 100,
     ndvi: sp.ndvi,
@@ -320,7 +320,7 @@ export async function fetchXai(
   try {
     const runData = await fetchScenarioRunData(activeRun);
     const yearKey = String(year);
-    const isKabupaten = gid.endsWith('-KAB') || runData.meta.method === 'mumtaz';
+    const isKabupaten = gid.endsWith('-KAB') || runData.meta.method === 'direct_district';
 
     const localSource = !isKabupaten && name2 && name3
       ? runData.shap_kecamatan[`${name2}|${name3}`]?.[yearKey]

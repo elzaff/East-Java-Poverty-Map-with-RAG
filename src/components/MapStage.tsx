@@ -386,7 +386,7 @@ export function MapStage({
             {viewLevel === 'kabupaten' && (activeLayer === 'estimasi_kemiskinan' || activeLayer === 'poverty_risk_score') && (
               <div className="bg-black/30 border border-white/5 p-2 rounded mb-2 space-y-1.5">
                 <div className="flex justify-between items-center text-[10px]">
-                  <span className="text-[#f59e0b]/80 uppercase font-bold tracking-wider">{activeRun?.method === 'mumtaz' ? 'DIRECT DISTRICT' : 'AGGREGATE'}</span>
+                  <span className="text-[#f59e0b]/80 uppercase font-bold tracking-wider">{activeRun?.method === 'direct_district' ? 'DIRECT DISTRICT' : 'AGGREGATE'}</span>
                   <span className="font-mono text-[#f59e0b] font-bold">{hoveredInfo.val.toFixed(2)}%</span>
                 </div>
                 {predKab[hoveredInfo.name_2]?.series?.find((s: any) => s.year === year)?.bps != null && (
@@ -433,7 +433,9 @@ export function MapStage({
 
       <div className="absolute top-6 left-6 z-20 pointer-events-none bg-[#1a1a1e]/90 border border-white/10 p-4 rounded shadow-2xl backdrop-blur">
         <h2 className="text-[10px] text-white/50 uppercase tracking-widest mb-1">Active Run</h2>
-        <div className="text-lg font-bold text-white uppercase">{activeRun ? `${activeRun.method} | ${activeRun.model}` : 'Loading'}</div>
+        <div className="text-lg font-bold text-white uppercase">
+          {activeRun ? `${activeRun.method === 'direct_district' ? 'Direct District' : 'Aggregate'} | ${activeRun.model}` : 'Loading'}
+        </div>
         <div className="text-[10px] text-white/40 uppercase mt-1">{activeRun?.scenario ?? ''}</div>
         <div className="flex items-center justify-between text-[9px] font-mono text-white/40 uppercase mt-4 mb-1">
           <span>{geojsonData?.dataMin?.toFixed(2) ?? 'LOW'}</span>

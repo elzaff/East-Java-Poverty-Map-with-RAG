@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const file1 = path.join(__dirname, '../public/data/dashboard_predictions_kabupaten_mumtaz.csv');
-const file2 = path.join(__dirname, '../public/data/dashboard_predictions_2026_kabupaten_mumtaz.csv');
+const file1 = path.join(__dirname, '../public/data/dashboard_predictions_kabupaten_direct_district.csv');
+const file2 = path.join(__dirname, '../public/data/dashboard_predictions_2026_kabupaten_direct_district.csv');
 const outputJson = path.join(__dirname, '../public/api/data_predictions_kabupaten.json');
 
 const data = {};

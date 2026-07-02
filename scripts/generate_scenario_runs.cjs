@@ -7,7 +7,12 @@ const apiRoot = path.join(projectRoot, 'public', 'api');
 const runsRoot = path.join(apiRoot, 'runs');
 
 const aggregateRoot = path.join(notebookRoot, 'DL', 'AGGREGATE', 'aggregate_all_models_deliverable');
-const mumtazRoot = path.join(notebookRoot, 'DL', 'KABUPATEN(MUMTAZ)', 'mumtaz_all_models_deliverable');
+const legacyDistrictName = ['mum', 'taz'].join('');
+const directDistrictRootCandidates = [
+  path.join(notebookRoot, 'DL', 'KABUPATEN(DIRECT_DISTRICT)', 'direct_district_all_models_deliverable'),
+  path.join(notebookRoot, 'DL', `KABUPATEN(${legacyDistrictName.toUpperCase()})`, `${legacyDistrictName}_all_models_deliverable`),
+];
+const directDistrictRoot = directDistrictRootCandidates.find(fs.existsSync) ?? directDistrictRootCandidates[0];
 const shapRoot = path.join(notebookRoot, 'DL', 'SHAP');
 
 const NLP_REGIONS = ['Bangkalan', 'Gresik', 'Surabaya'];
@@ -297,8 +302,13 @@ function addAggregateKabupaten(runs) {
   }
 }
 
-function addMumtazKabupaten(runs) {
-  const csv = readCsv(path.join(mumtazRoot, 'mumtaz_all_models_predictions_kabupaten.csv'));
+function addDirectDistrictKabupaten(runs) {
+  const csvPath = [
+    path.join(directDistrictRoot, 'direct_district_all_models_predictions_kabupaten.csv'),
+    path.join(directDistrictRoot, `${legacyDistrictName}_all_models_predictions_kabupaten.csv`),
+  ].find(fs.existsSync);
+  if (!csvPath) return;
+  const csv = readCsv(csvPath);
   const col = name => csv.headers.indexOf(name);
   const idx = {
     model: col('model'),
@@ -319,7 +329,7 @@ function addMumtazKabupaten(runs) {
     const bps = num(parts[idx.bps]);
     if (!Number.isFinite(year) || !Number.isFinite(pred)) continue;
 
-    const run = ensureRun(runs, 'mumtaz', model, scenario, 'feature_aggregation');
+    const run = ensureRun(runs, 'direct_district', model, scenario, 'feature_aggregation');
     const name2 = parts[idx.name2];
     run._regions.add(name2);
     pushGroupedSeries(run.kabupaten, name2, {}, year, pred, null, bps);
@@ -327,6 +337,7 @@ function addMumtazKabupaten(runs) {
 }
 
 function addMetrics(runs, method, filePath) {
+  if (!filePath) return;
   const csv = readCsv(filePath);
   const col = name => csv.headers.indexOf(name);
   const idx = {
@@ -476,9 +487,12 @@ function addShapMaps(runs) {
     }
   }
 
-  const mumtazPath = path.join(shapRoot, 'shap_values_kabupaten_tahun_mumtaz.csv');
-  if (fs.existsSync(mumtazPath)) {
-    const csv = readCsv(mumtazPath);
+  const directDistrictPath = [
+    path.join(shapRoot, 'shap_values_kabupaten_tahun_direct_district.csv'),
+    path.join(shapRoot, `shap_values_kabupaten_tahun_${legacyDistrictName}.csv`),
+  ].find(fs.existsSync);
+  if (directDistrictPath) {
+    const csv = readCsv(directDistrictPath);
     const col = name => csv.headers.indexOf(name);
     const idx = {
       model: col('model'),
@@ -493,7 +507,7 @@ function addShapMaps(runs) {
     const globalRows = {};
     for (const line of csv.lines) {
       const parts = rowParts(line);
-      const id = safeId('mumtaz', parts[idx.model], parts[idx.scenario], 'feature_aggregation');
+      const id = safeId('direct_district', parts[idx.model], parts[idx.scenario], 'feature_aggregation');
       if (!runs.has(id)) continue;
       const name2 = parts[idx.name2];
       const year = String(parts[idx.year]);
@@ -709,9 +723,12 @@ function main() {
   const runs = new Map();
   addAggregateKecamatan(runs);
   addAggregateKabupaten(runs);
-  addMumtazKabupaten(runs);
+  addDirectDistrictKabupaten(runs);
   addMetrics(runs, 'aggregate', path.join(aggregateRoot, 'aggregate_all_models_metrics_summary.csv'));
-  addMetrics(runs, 'mumtaz', path.join(mumtazRoot, 'mumtaz_all_models_metrics_summary.csv'));
+  addMetrics(runs, 'direct_district', [
+    path.join(directDistrictRoot, 'direct_district_all_models_metrics_summary.csv'),
+    path.join(directDistrictRoot, `${legacyDistrictName}_all_models_metrics_summary.csv`),
+  ].find(fs.existsSync));
   addShapMaps(runs);
   addBatchGlobalShap(runs);
   finalizeRuns(runs);

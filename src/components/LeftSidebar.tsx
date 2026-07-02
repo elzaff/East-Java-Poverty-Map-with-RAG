@@ -248,7 +248,7 @@ export function LeftSidebar({
         </h3>
 
         <div className="grid grid-cols-2 gap-2 bg-black/40 p-1 rounded-lg border border-white/5 mb-3">
-          {(['aggregate', 'mumtaz'] as ScenarioMethod[]).map(item => (
+          {(['aggregate', 'direct_district'] as ScenarioMethod[]).map(item => (
             <button
               key={item}
               onClick={() => changeMethod(item)}
