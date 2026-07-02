@@ -52,7 +52,7 @@ export function DataNotes({ onClose }: DataNotesProps) {
             </ul>
           </Section>
 
-          <Section icon={AlertTriangle} title="Metode Estimasi: Aggregate vs Direct District (Mumtaz)">
+          <Section icon={AlertTriangle} title="Metode Estimasi: Aggregate vs Direct District">
             <p>
               Di Indonesia, <strong className="text-white">tidak ada data kemiskinan resmi tingkat kecamatan</strong> yang dipublikasikan secara konsisten. BPS hanya merilis angka di tingkat Kabupaten/Kota. Oleh karena itu, aplikasi ini menyajikan dua jenis estimasi tingkat kecamatan:
             </p>
@@ -68,7 +68,7 @@ export function DataNotes({ onClose }: DataNotesProps) {
               </div>
               
               <div className="bg-white/5 border border-white/10 p-3 rounded">
-                <h4 className="text-white font-bold text-[11px] mb-1">2. Estimasi Direct District (Mumtaz / Benchmark)</h4>
+                <h4 className="text-white font-bold text-[11px] mb-1">2. Estimasi Direct District (Benchmark)</h4>
                 <p className="text-[11px] text-white/70 leading-relaxed mb-1">
                   Ini adalah metode pengujian pembanding (baseline eksperimen). Metode ini mengasumsikan bahwa setiap kecamatan memiliki angka kemiskinan yang <strong>sama persis</strong> dengan angka kabupatennya (Supervisi Langsung).
                 </p>

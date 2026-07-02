@@ -56,7 +56,7 @@ export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorer
           <div className="flex items-center gap-3">
             <div className="text-[10px] uppercase font-bold tracking-widest text-[#e4e4e7]">
               <h2 className="text-xl font-sans font-bold text-white tracking-tight leading-none mb-1">Intelligence Architecture</h2>
-              <p className="text-[10px] text-white/40">Semua skenario Aggregate dan Mumtaz | klik Tampilkan untuk memuat ke peta</p>
+              <p className="text-[10px] text-white/40">Semua skenario Aggregate dan Direct District | klik Tampilkan untuk memuat ke peta</p>
             </div>
           </div>
           <button onClick={onClose} className="p-2 text-white/40 hover:text-white hover:bg-white/5 rounded-full transition-colors">
@@ -83,7 +83,7 @@ export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorer
                   activeTab === 'mumtaz' ? 'border-[#fbbf24] text-[#fbbf24]' : 'border-transparent text-white/40 hover:text-white/70',
                 )}
               >
-                Direct District / Mumtaz
+                Direct District
               </button>
             </div>
 
@@ -95,7 +95,7 @@ export function ModelExplorer({ onClose, activeRun, onRunChange }: ModelExplorer
                 'text-[10px] mb-2 font-bold tracking-widest uppercase',
                 activeTab === 'aggregate' ? 'text-[#f87171]' : 'text-[#fbbf24]',
               )}>
-                {activeTab === 'aggregate' ? 'AGGREGATE WEAK SUPERVISION' : 'MUMTAZ DIRECT DISTRICT'}
+                {activeTab === 'aggregate' ? 'AGGREGATE WEAK SUPERVISION' : 'DIRECT DISTRICT'}
               </h3>
               <p className="text-sm text-white/70 leading-relaxed font-sans">
                 {activeTab === 'aggregate'

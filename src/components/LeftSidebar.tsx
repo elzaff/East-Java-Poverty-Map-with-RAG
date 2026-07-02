@@ -259,7 +259,7 @@ export function LeftSidebar({
                   : 'text-white/40 hover:text-white/70 border border-transparent',
               )}
             >
-              {item === 'aggregate' ? 'Aggregate' : 'Mumtaz'}
+              {item === 'aggregate' ? 'Aggregate' : 'Direct District'}
             </button>
           ))}
         </div>
